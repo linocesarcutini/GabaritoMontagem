@@ -141,7 +141,7 @@
             // cbRaioMedio
             // 
             this.cbRaioMedio.AutoSize = true;
-            this.cbRaioMedio.Location = new System.Drawing.Point(244, 18);
+            this.cbRaioMedio.Location = new System.Drawing.Point(243, 54);
             this.cbRaioMedio.Name = "cbRaioMedio";
             this.cbRaioMedio.Size = new System.Drawing.Size(15, 14);
             this.cbRaioMedio.TabIndex = 13;
@@ -167,7 +167,7 @@
             this.Controls.Add(this.lblComprimentoHorizontal);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Gabarito de Montagem";
             this.ResumeLayout(false);
             this.PerformLayout();
 
