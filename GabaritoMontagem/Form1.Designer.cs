@@ -1,6 +1,6 @@
 ﻿namespace GabaritoMontagem
 {
-    partial class Form1
+    partial class FormGabaritoMontagem
     {
         /// <summary>
         /// Required designer variable.
@@ -40,12 +40,14 @@
             this.lblResultBitolaVertical = new System.Windows.Forms.Label();
             this.lblAlerta = new System.Windows.Forms.Label();
             this.cbRaioMedio = new System.Windows.Forms.CheckBox();
+            this.cbGabarito = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblComprimentoHorizontal
             // 
             this.lblComprimentoHorizontal.AutoSize = true;
-            this.lblComprimentoHorizontal.Location = new System.Drawing.Point(13, 18);
+            this.lblComprimentoHorizontal.Location = new System.Drawing.Point(16, 51);
             this.lblComprimentoHorizontal.Name = "lblComprimentoHorizontal";
             this.lblComprimentoHorizontal.Size = new System.Drawing.Size(118, 13);
             this.lblComprimentoHorizontal.TabIndex = 0;
@@ -54,7 +56,7 @@
             // lblComprimentoVertical
             // 
             this.lblComprimentoVertical.AutoSize = true;
-            this.lblComprimentoVertical.Location = new System.Drawing.Point(13, 54);
+            this.lblComprimentoVertical.Location = new System.Drawing.Point(16, 88);
             this.lblComprimentoVertical.Name = "lblComprimentoVertical";
             this.lblComprimentoVertical.Size = new System.Drawing.Size(106, 13);
             this.lblComprimentoVertical.TabIndex = 1;
@@ -62,14 +64,16 @@
             // 
             // tbComprimentoHorizontal
             // 
-            this.tbComprimentoHorizontal.Location = new System.Drawing.Point(137, 15);
+            this.tbComprimentoHorizontal.Location = new System.Drawing.Point(140, 48);
             this.tbComprimentoHorizontal.Name = "tbComprimentoHorizontal";
             this.tbComprimentoHorizontal.Size = new System.Drawing.Size(100, 20);
             this.tbComprimentoHorizontal.TabIndex = 2;
+            this.tbComprimentoHorizontal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbComprimentoHorizontal_KeyPress);
             // 
             // tbComprimentoVertical
             // 
-            this.tbComprimentoVertical.Location = new System.Drawing.Point(137, 51);
+            this.tbComprimentoVertical.Enabled = false;
+            this.tbComprimentoVertical.Location = new System.Drawing.Point(140, 84);
             this.tbComprimentoVertical.Name = "tbComprimentoVertical";
             this.tbComprimentoVertical.Size = new System.Drawing.Size(100, 20);
             this.tbComprimentoVertical.TabIndex = 3;
@@ -77,7 +81,7 @@
             // lblBitolaHorizontal
             // 
             this.lblBitolaHorizontal.AutoSize = true;
-            this.lblBitolaHorizontal.Location = new System.Drawing.Point(13, 90);
+            this.lblBitolaHorizontal.Location = new System.Drawing.Point(13, 130);
             this.lblBitolaHorizontal.Name = "lblBitolaHorizontal";
             this.lblBitolaHorizontal.Size = new System.Drawing.Size(83, 13);
             this.lblBitolaHorizontal.TabIndex = 6;
@@ -86,7 +90,7 @@
             // btnCalcular
             // 
             this.btnCalcular.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCalcular.Location = new System.Drawing.Point(173, 197);
+            this.btnCalcular.Location = new System.Drawing.Point(140, 222);
             this.btnCalcular.Name = "btnCalcular";
             this.btnCalcular.Size = new System.Drawing.Size(75, 23);
             this.btnCalcular.TabIndex = 7;
@@ -97,7 +101,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCancelar.Location = new System.Drawing.Point(92, 197);
+            this.btnCancelar.Location = new System.Drawing.Point(47, 222);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 8;
@@ -108,7 +112,7 @@
             // lblResultBitolaHorizontal
             // 
             this.lblResultBitolaHorizontal.AutoSize = true;
-            this.lblResultBitolaHorizontal.Location = new System.Drawing.Point(137, 90);
+            this.lblResultBitolaHorizontal.Location = new System.Drawing.Point(137, 130);
             this.lblResultBitolaHorizontal.Name = "lblResultBitolaHorizontal";
             this.lblResultBitolaHorizontal.Size = new System.Drawing.Size(0, 13);
             this.lblResultBitolaHorizontal.TabIndex = 9;
@@ -116,7 +120,7 @@
             // lblBitolaVertical
             // 
             this.lblBitolaVertical.AutoSize = true;
-            this.lblBitolaVertical.Location = new System.Drawing.Point(13, 126);
+            this.lblBitolaVertical.Location = new System.Drawing.Point(13, 166);
             this.lblBitolaVertical.Name = "lblBitolaVertical";
             this.lblBitolaVertical.Size = new System.Drawing.Size(71, 13);
             this.lblBitolaVertical.TabIndex = 10;
@@ -125,7 +129,7 @@
             // lblResultBitolaVertical
             // 
             this.lblResultBitolaVertical.AutoSize = true;
-            this.lblResultBitolaVertical.Location = new System.Drawing.Point(137, 126);
+            this.lblResultBitolaVertical.Location = new System.Drawing.Point(137, 166);
             this.lblResultBitolaVertical.Name = "lblResultBitolaVertical";
             this.lblResultBitolaVertical.Size = new System.Drawing.Size(0, 13);
             this.lblResultBitolaVertical.TabIndex = 11;
@@ -133,26 +137,55 @@
             // lblAlerta
             // 
             this.lblAlerta.AutoSize = true;
-            this.lblAlerta.Location = new System.Drawing.Point(13, 162);
+            this.lblAlerta.ForeColor = System.Drawing.Color.Red;
+            this.lblAlerta.Location = new System.Drawing.Point(44, 196);
             this.lblAlerta.Name = "lblAlerta";
-            this.lblAlerta.Size = new System.Drawing.Size(0, 13);
+            this.lblAlerta.Size = new System.Drawing.Size(188, 13);
             this.lblAlerta.TabIndex = 12;
+            this.lblAlerta.Text = "É Recomendável usar a barra vertical!";
+            this.lblAlerta.Visible = false;
             // 
             // cbRaioMedio
             // 
             this.cbRaioMedio.AutoSize = true;
-            this.cbRaioMedio.Location = new System.Drawing.Point(243, 54);
+            this.cbRaioMedio.Enabled = false;
+            this.cbRaioMedio.Location = new System.Drawing.Point(246, 87);
             this.cbRaioMedio.Name = "cbRaioMedio";
             this.cbRaioMedio.Size = new System.Drawing.Size(15, 14);
             this.cbRaioMedio.TabIndex = 13;
             this.cbRaioMedio.UseVisualStyleBackColor = true;
             this.cbRaioMedio.CheckedChanged += new System.EventHandler(this.cbRaioMedio_CheckedChanged);
             // 
-            // Form1
+            // cbGabarito
+            // 
+            this.cbGabarito.FormattingEnabled = true;
+            this.cbGabarito.Items.AddRange(new object[] {
+            "Engetower",
+            "Gontijo",
+            "Brametal"});
+            this.cbGabarito.Location = new System.Drawing.Point(140, 12);
+            this.cbGabarito.Name = "cbGabarito";
+            this.cbGabarito.Size = new System.Drawing.Size(100, 21);
+            this.cbGabarito.TabIndex = 14;
+            this.cbGabarito.Text = "Engetower";
+            this.cbGabarito.SelectedValueChanged += new System.EventHandler(this.cbGabarito_SelectedValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(16, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Gabarito";
+            // 
+            // FormGabaritoMontagem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(269, 232);
+            this.ClientSize = new System.Drawing.Size(269, 257);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbGabarito);
             this.Controls.Add(this.cbRaioMedio);
             this.Controls.Add(this.lblAlerta);
             this.Controls.Add(this.lblResultBitolaVertical);
@@ -165,7 +198,7 @@
             this.Controls.Add(this.tbComprimentoHorizontal);
             this.Controls.Add(this.lblComprimentoVertical);
             this.Controls.Add(this.lblComprimentoHorizontal);
-            this.Name = "Form1";
+            this.Name = "FormGabaritoMontagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gabarito de Montagem";
             this.ResumeLayout(false);
@@ -187,6 +220,8 @@
         private System.Windows.Forms.Label lblResultBitolaVertical;
         private System.Windows.Forms.Label lblAlerta;
         private System.Windows.Forms.CheckBox cbRaioMedio;
+        private System.Windows.Forms.ComboBox cbGabarito;
+        private System.Windows.Forms.Label label1;
     }
 }
 
