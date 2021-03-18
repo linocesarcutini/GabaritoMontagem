@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGabaritoMontagem));
             this.lblComprimentoHorizontal = new System.Windows.Forms.Label();
             this.lblComprimentoVertical = new System.Windows.Forms.Label();
             this.tbComprimentoHorizontal = new System.Windows.Forms.TextBox();
@@ -198,6 +199,7 @@
             this.Controls.Add(this.tbComprimentoHorizontal);
             this.Controls.Add(this.lblComprimentoVertical);
             this.Controls.Add(this.lblComprimentoHorizontal);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormGabaritoMontagem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gabarito de Montagem";
